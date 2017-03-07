@@ -20,10 +20,21 @@ public class ApacheDirective implements Cloneable {
     private static final String WORD = "\"(?:[^\"\n]|\\\")*\"|'(?:[^'\n]|\\\')*'|[^'\" \t\n]+";
     private static final String DIRECTIVE_REGEX = WS + "(" + WORD + ")" + WS;
     private static final String COMMENT_REGEX = "^[\t ]*#.*+$";
+    private static final String LISTEN_PORT_REGEX = "^[0-9]+$";
+    private static final String LISTEN_ALL_HOSTS_PORT_REGEX = "^\\*:[0-9]+$";
+    private static final String LISTEN_IPV4_PORT_REGEX = "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+:[0-9]+$";
+    private static final String LISTEN_IPV6_PORT_REGEX = "^\\[.*:.*::.*:.*:.*:.*\\]:[0-9]+$";
+    private static final String LISTEN_HOSTNAME_PORT_REGEX = "^\\w+:[0-9]+$";
     private boolean updated = false;
 
     private static final Pattern DIRECTIVE_PATTERN = Pattern.compile(DIRECTIVE_REGEX);
     private static final Pattern COMMENT_PATTERN = Pattern.compile(COMMENT_REGEX);
+    private static final Pattern LISTEN_PORT_PATTERN = Pattern.compile(LISTEN_PORT_REGEX);
+    private static final Pattern LISTEN_ALL_HOSTS_PORT_PATTERN = Pattern.compile(LISTEN_ALL_HOSTS_PORT_REGEX);
+    private static final Pattern LISTEN_IPV4_PORT_PATTERN = Pattern.compile(LISTEN_IPV4_PORT_REGEX);
+    private static final Pattern LISTEN_IPV6_PORT_PATTERN = Pattern.compile(LISTEN_IPV6_PORT_REGEX);
+    private static final Pattern LISTEN_HOSTNAME_PORT_PATTERN = Pattern.compile(LISTEN_HOSTNAME_PORT_REGEX);
+    
     private List<ApacheDirective> childNodes;
     private ApacheDirective parentNode;
     private String file;

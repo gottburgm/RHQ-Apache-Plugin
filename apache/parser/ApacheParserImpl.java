@@ -35,9 +35,11 @@ public class ApacheParserImpl implements ApacheParser {
     private final static String INCLUDE_DIRECTIVE = "Include";
     private final static String INCLUDEOPTIONAL_DIRECTIVE = "IncludeOptional";
     private static final String SERVER_ROOT_DIRECTIVE = "ServerRoot";
+    private static final String LISTEN_DIRECTIVE = "Listen";
     private final ApacheDirectiveTree tree;
     private ApacheDirectiveStack stack;
     private String serverRootPath;
+    private String listeningHostPort;
     private RuntimeApacheConfiguration.NodeInspector nodeInspector;
     
     /**
@@ -72,6 +74,20 @@ public class ApacheParserImpl implements ApacheParser {
             }
         } else if (directiveName.equals(SERVER_ROOT_DIRECTIVE)) {
             this.serverRootPath = AugeasNodeValueUtil.unescape(directive.getValuesAsString());
+        } else if (directiveName.equals(LISTEN_DIRECTIVE)) {
+            /**
+             * Get the value of the "Listen" directive to parse and test it
+             * Multiple formats are possible for the directive's value :
+             *
+             * - Listen <port>                                               (Example : Listen 80)
+             * - Listen *:<port>                                            (Example : Listen *:80)
+             * - Listen <IPv4_Address>:<port>                   (Example : Listen 192.0.2.1:80)
+             * - Listen <IPv6_Address>:<port>                   (Example : Listen [2001:db8::a00:20ff:fea7:ccea]:80)
+             * - Listen <hostname>:<port>                         (Example : Listen localhost:80)
+             * - Listen <All_Formats>:<port> <protocol> (Example : Listen Listen 0.0.0.0:8443 https)
+             */
+            this.listeningHostPort = AugeasNodeValueUtil.unescape(directive.getValuesAsString());
+            
         }
 
         if (nodeInspector != null) {
