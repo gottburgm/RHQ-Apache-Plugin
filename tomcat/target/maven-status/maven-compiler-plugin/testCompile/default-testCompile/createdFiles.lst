@@ -1,0 +1,4 @@
+org/jboss/on/plugins/tomcat/test/TomcatVHostComponentTest.class
+org/jboss/on/plugins/tomcat/test/TomcatPluginTest.class
+org/jboss/on/plugins/tomcat/test/FileContentDelegateTest.class
+org/jboss/on/plugins/tomcat/test/TomcatWarComponentTest.class

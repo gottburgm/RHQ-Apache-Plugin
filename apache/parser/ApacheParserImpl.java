@@ -84,7 +84,7 @@ public class ApacheParserImpl implements ApacheParser {
              * - Listen <IPv4_Address>:<port>                   (Example : Listen 192.0.2.1:80)
              * - Listen <IPv6_Address>:<port>                   (Example : Listen [2001:db8::a00:20ff:fea7:ccea]:80)
              * - Listen <hostname>:<port>                         (Example : Listen localhost:80)
-             * - Listen <All_Formats>:<port> <protocol> (Example : Listen Listen 0.0.0.0:8443 https)
+             * - Listen <All_Formats>:<port> <protocol> (Example : Listen 0.0.0.0:8443 https)
              */
             this.listeningHostPort = AugeasNodeValueUtil.unescape(directive.getValuesAsString());
             

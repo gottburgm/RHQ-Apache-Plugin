@@ -1,0 +1,4 @@
+/home/jboss/rhq/modules/plugins/tomcat/src/test/java/org/jboss/on/plugins/tomcat/test/FileContentDelegateTest.java
+/home/jboss/rhq/modules/plugins/tomcat/src/test/java/org/jboss/on/plugins/tomcat/test/TomcatWarComponentTest.java
+/home/jboss/rhq/modules/plugins/tomcat/src/test/java/org/jboss/on/plugins/tomcat/test/TomcatPluginTest.java
+/home/jboss/rhq/modules/plugins/tomcat/src/test/java/org/jboss/on/plugins/tomcat/test/TomcatVHostComponentTest.java

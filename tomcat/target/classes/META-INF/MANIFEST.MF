@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Implementation-Title: RHQ Tomcat Plugin
+Implementation-Version: 4.14.0-SNAPSHOT
+Build-Number: b9a60ba
+Archiver-Version: Plexus Archiver
+Java-Version: 1.8.0_91
+Built-By: jboss
+Specification-Vendor: Red Hat, Inc.
+Os-Arch: i386
+Specification-Title: RHQ Tomcat Plugin
+Implementation-Vendor-Id: org.jboss.on
+Java-Vendor: Oracle Corporation
+Os-Name: Linux
+Implementation-Vendor: Red Hat, Inc.
+Os-Version: 4.4.14-200.fc22.i686+PAE
+Build-Time: 10/31/16 06:30 PM GMT
+Maven-Version: 3.2.5
+Created-By: Apache Maven 3.2.5
+Build-Jdk: 1.8.0_91
+Specification-Version: 4.14.0-SNAPSHOT
+
